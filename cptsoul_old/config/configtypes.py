@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from base64 import b64decode, b64encode
-
 
 class defaultJSON(object):
     def __init__(self, value):
@@ -65,15 +63,3 @@ class nonEmptyStrJSON(defaultJSON):
                 self._value = value
         else:
             raise TypeError("String only")
-
-
-class encodedStrJSON(defaultJSON):
-    def getter(self):
-        try:
-            return b64decode(self._value)
-        except TypeError:
-            self._value = ""
-            return ""
-
-    def setter(self, value):
-        self._value = b64encode(value)

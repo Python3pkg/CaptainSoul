@@ -18,7 +18,6 @@ setup(
         ]
     },
     install_requires=[
-        "twisted"
     ],
     package_data={
         'cptsoul': ['icons/*.png']
